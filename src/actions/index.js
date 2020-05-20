@@ -1,4 +1,7 @@
 export const RECEIVE_MEMES = "RECEIVE_MEMES";
+export const NEW_MEME = "NEW_MEME";
+
+// import { username, password} from './secrets';
 
 function receiveMemes(json) {
   const { memes } = json.data;
@@ -19,3 +22,12 @@ export function fetchMemes() {
     return fetchMemesJson().then((json) => dispatch(receiveMemes(json)));
   };
 }
+
+export function newMeme(meme) {
+  return {
+    type: NEW_MEME,
+    meme,
+  };
+}
+
+// function postMemes

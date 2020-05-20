@@ -40,7 +40,14 @@ class App extends Component {
           </FormGroup>
         </Form>
         {this.props.memes.slice(0, this.state.memeLimit).map((meme, index) => {
-          return <MemeItem key={index} meme={meme} />;
+          return (
+            <MemeItem
+              key={index}
+              meme={meme}
+              text0={this.state.text0}
+              text1={this.state.text1}
+            />
+          );
         })}
         <div
           className="meme-button"
